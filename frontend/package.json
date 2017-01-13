@@ -1,0 +1,53 @@
+{
+  "name": "banass",
+  "version": "0.0.0",
+  "description": "Once upon a midnight dreary I woke up",
+  "dependencies": {
+    "aphrodite": "^1.1.0",
+    "color": "^0.11.4",
+    "lodash": "^4.17.3",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.8",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-root-import": "^4.1.5",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "eslint": "^3.12.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.8.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "html-webpack-plugin": "^2.24.1",
+    "lodash": "^4.17.2",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baitcode/bonass.git"
+  },
+  "keywords": [
+    "gay",
+    "ass"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baitcode/bonass/issues"
+  },
+  "homepage": "https://github.com/baitcode/bonass#readme"
+}
