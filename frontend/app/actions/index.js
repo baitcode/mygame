@@ -41,7 +41,9 @@ export const spawnShit = (x, y, item) => {
     data: {
       id: guid(),
       createdAt: Date.now(),
+      updatedAt: Date.now(),
       type: item,
+      buildTime: 5000,
       x: x,
       y: y,
       state: 'spawned'

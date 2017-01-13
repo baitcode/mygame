@@ -13,7 +13,10 @@ const styles = StyleSheet.create({
     overflow: 'auto',
     width: '10px',
     height: '20px',
-    background: 'black'
+    background: 'black',
+  },
+  building: {
+    background: 'blue',
   },
   hidden: {
     display: 'none'

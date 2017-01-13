@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     width: '200px',
+    'z-index': '1000',
   },
   normal: {
     position: 'relative',

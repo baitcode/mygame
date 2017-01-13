@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     overflow: 'auto',
     width: '100px',
     height: '200px',
+    'z-index': '100',
   },
   hidden: {
     display: 'none'

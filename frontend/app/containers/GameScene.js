@@ -7,6 +7,8 @@ import {connect} from 'react-redux';
 import DebugPanel from '~/components/DebugPanel'
 import BuildMenu from '~/components/BuildMenu'
 import Structure from '~/components/Structure'
+import Map from '~/components/Map'
+import Viewport from '~/components/Viewport'
 import * as actions from '~/actions'
 
 
@@ -48,10 +50,14 @@ export default class GameScene extends React.Component {
     })
 
     return (
-      <div className={css(styles.scene)} onClick={this.buildShit}>
+      <div className={css(styles.scene)} >
         <DebugPanel />
-        <BuildMenu />
-        {structures}
+        <Viewport>
+          <BuildMenu />
+          <Map onClick={this.buildShit}>
+            {structures}
+          </Map>
+        </Viewport>
       </div>
     )
   }
