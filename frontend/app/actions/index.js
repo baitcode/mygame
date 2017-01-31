@@ -3,6 +3,9 @@ import {guid} from '~/utils'
 export const TIME_TICK = 'TIME_TICK'
 export const MENU_BUILD_SHOW = 'MENU_BUILD_SHOW'
 export const MENU_BUILD_HIDE = 'MENU_BUILD_HIDE'
+
+export const MOVE_VIEWPORT = 'MOVE_VIEWPORT'
+
 export const SPAWN_SHIT = 'SPAWN_SHIT'
 
 
@@ -47,6 +50,16 @@ export const spawnShit = (x, y, item) => {
       x: x,
       y: y,
       state: 'spawned'
+    },
+  }
+}
+
+export const moveViewPort = (dx, dy) => {
+  return {
+    type: MOVE_VIEWPORT,
+    data: {
+      dx: dx,
+      dy: dy,
     },
   }
 }

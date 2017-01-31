@@ -9,10 +9,23 @@ const defaultState = {
   },
   map: {
     width: 10000,
-    height: 10000
+    height: 10000,
+    tileWidth: 16,
+    tileHeight: 16,
   },
   viewport: {
-    position: [1000, 1000],
+    clientPosition: {
+      x: 150,
+      y: 10,
+    },
+    position: {
+      x: 250,
+      y: 250,
+    },
+    size: {
+      width: 800,
+      height: 500,
+    }
   },
   resources: {
     sun: 0,
@@ -20,7 +33,7 @@ const defaultState = {
   },
   units: {},
   structures: {},
-  delta: 10,
+  delta: 40,
   time: 0,
 }
 
@@ -91,6 +104,28 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         structures
+      }
+    case actions.MOVE_VIEWPORT:
+      const position = state.viewport.position
+
+      position.x += action.data.dx
+      position.y += action.data.dy
+
+      position.x = Math.max(0, position.x)
+      position.y = Math.max(0, position.y)
+
+      const map = state.map;
+      const viewport = state.viewport;
+
+      position.x = Math.min(map.width - viewport.size.width, position.x)
+      position.y = Math.min(map.height - viewport.size.height, position.y)
+
+      return {
+        ...state,
+        viewport: {
+          ...state.viewport,
+          position: position,
+        },
       }
 
   }

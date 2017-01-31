@@ -10,16 +10,17 @@ import Structure from '~/components/Structure'
 import Map from '~/components/Map'
 import Viewport from '~/components/Viewport'
 import * as actions from '~/actions'
+import * as utils from '~/utils'
 
 
 const styles = StyleSheet.create({
   scene: {
     position: 'absolute',
-    overflow: 'auto',
     top: 0,
     left: 0,
     bottom: 0,
     right: 0,
+    overflow: 'hidden',
   }
 });
 
@@ -34,11 +35,14 @@ export default class GameScene extends React.Component {
 
     const {dispatch} = this.props;
 
+    const viewportPoint = utils.xyClient2Map(
+      e.clientX,
+      e.clientY,
+      this.props.viewport
+    )
+
     dispatch(
-      actions.showBuildMenu(
-        e.nativeEvent.offsetX,
-        e.nativeEvent.offsetY
-      )
+      actions.showBuildMenu(viewportPoint.x, viewportPoint.y)
     )
   }
 
@@ -52,9 +56,9 @@ export default class GameScene extends React.Component {
     return (
       <div className={css(styles.scene)} >
         <DebugPanel />
-        <Viewport>
-          <BuildMenu />
-          <Map onClick={this.buildShit}>
+        <Viewport onClick={this.buildShit}>
+          <Map >
+            <BuildMenu/>
             {structures}
           </Map>
         </Viewport>

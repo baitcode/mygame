@@ -11,12 +11,19 @@ module.exports = {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
-  module : {
-    loaders : [
+  module: {
+    rules: [
       {
-        test : /\.jsx?/,
-        include : APP_DIR,
-        loader : 'babel'
+        test: /\.jsx?/,
+        include: APP_DIR,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.png?/,
+        options: {
+          name: '[path][name].[hash].[ext]',
+        },
+        loader: 'file-loader'
       }
     ]
   },
@@ -26,10 +33,14 @@ module.exports = {
     })
   ],
   resolve: {
-    root: APP_DIR,
+    modules: [
+      APP_DIR,
+      'node_modules'
+    ]
   },
   devServer: {
     contentBase: BUILD_DIR,
     port: 8000
   }
 };
+

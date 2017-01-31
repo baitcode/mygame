@@ -11,7 +11,7 @@ const store = createStore(
   mainReducer
 )
 
-const timeStep = 10
+const timeStep = 40
 
 const loop = () => {
   store.dispatch(actions.tick(timeStep))

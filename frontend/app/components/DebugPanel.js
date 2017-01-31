@@ -10,6 +10,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '200px',
     'z-index': '1000',
+    'font-size': '8px',
+    height: '400px',
+    'overflow-y': 'scroll',
   },
   normal: {
     position: 'relative',
@@ -27,7 +30,7 @@ const styles = StyleSheet.create({
 export default class DebugPanel extends React.Component {
 
   state = {
-    isHidden: false
+    isHidden: true
   }
 
   hide = (e) => {

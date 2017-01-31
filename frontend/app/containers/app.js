@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   app: {
     position: 'absolute',
     overflow: 'auto',
+    border: '10px solid black',
     top: 0,
     left: 0,
     bottom: 0,

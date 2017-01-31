@@ -5,6 +5,7 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 import {connect} from 'react-redux';
 
 import * as actions from '~/actions'
+import * as utils from '~/utils'
 
 
 const styles = StyleSheet.create({
@@ -25,15 +26,18 @@ const styles = StyleSheet.create({
 
 
 @connect(state => {
-  return state.buildMenu
+  return {
+    settings: state.buildMenu,
+  }
 })
 export default class BuildMenu extends React.Component {
 
   onSelect = (e, item) => {
     e.stopPropagation()
-    const {dispatch, x, y} = this.props;
+    const {dispatch, settings} = this.props;
+
     dispatch(
-      actions.spawnShit(x, y, item)
+      actions.spawnShit(settings.x, settings.y, item)
     )
     dispatch(
       actions.hideBuildMenu()
@@ -41,10 +45,11 @@ export default class BuildMenu extends React.Component {
   }
 
   render() {
-    var state = this.props.state;
+    var settings = this.props.settings;
+    var state = settings.state;
     var style = {
-      left: this.props.x,
-      top: this.props.y,
+      left: settings.x,
+      top: settings.y,
     }
 
     return (
