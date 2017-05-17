@@ -8,10 +8,13 @@ const defaultState = {
     state: 'hidden'
   },
   map: {
-    width: 10000,
-    height: 10000,
+    width: 16*40,
+    height: 16*40,
     tileWidth: 16,
     tileHeight: 16,
+    mappy: {
+     '1_1': 1,
+    }
   },
   viewport: {
     clientPosition: {
@@ -19,8 +22,8 @@ const defaultState = {
       y: 10,
     },
     position: {
-      x: 250,
-      y: 250,
+      x: 0,
+      y: 0,
     },
     size: {
       width: 800,

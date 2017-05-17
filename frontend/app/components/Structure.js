@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     width: '10px',
     height: '20px',
     background: 'black',
+    "z-index": '1000'
   },
   building: {
     background: 'blue',
