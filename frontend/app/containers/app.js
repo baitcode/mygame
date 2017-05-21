@@ -1,13 +1,11 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite/no-important'
-import * as theme from '~/theme'
 
 
 const styles = StyleSheet.create({
   header: {
     height: '50px',
     fontSize: '40px',
-    backgroundColor: theme.cMaize.rgbString()
   },
   app: {
     position: 'absolute',
